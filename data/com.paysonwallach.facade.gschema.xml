@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="com.paysonwallach.facade" path="/com/paysonwallach/facade/">
+    <key name="alterations" type="a(sss)">
+      <default>[("","","")]</default>
+      <summary>Alterations</summary>
+      <description>List of WM classes to modify. Each item sould be a tuple of strings containing the window class to be modified, such as "gnome-terminal-server", the Gtk theme variant to apply, such as "dark", and a human-readable description in case the window class is ambiguous, such as "GNOME Terminal".</description>
+    </key>
+  </schema>
+</schemalist>

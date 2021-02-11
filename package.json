@@ -1,0 +1,45 @@
+{
+  "private": true,
+  "name": "facade",
+  "version": "0.1.0",
+  "description": "A background utility for setting Gtk theme variants per window class.",
+  "license": "GPL-3.0",
+  "author": "Payson Wallach <payson@paysonwallach.com>",
+  "homepage": "https://github.com/paysonwallach/facade#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paysonwallach/facade.git"
+  },
+  "bugs": {
+    "url": "https://github.com/paysonwallach/facade/issues"
+  },
+  "scripts": {
+    "build:meta": "scrivano",
+    "format": "run-p format:*",
+    "format:js": "prettier --write .",
+    "format:package.json": "prettier-package-json --write",
+    "format:vala": "find . -name '*.vala' -exec uncrustify -c uncrustify.cfg --replace {} \\;",
+    "release": "standard-version"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "husky": "^6.0.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.3.0",
+    "prettier-package-json": "^2.5.0",
+    "scrivano": "^0.1.0",
+    "standard-version": "^9.3.0"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "npm run format"
+    }
+  },
+  "standard-version": {
+    "scripts": {
+      "prerelease": "npm run build:meta"
+    }
+  }
+}
